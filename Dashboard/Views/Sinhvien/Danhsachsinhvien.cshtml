@@ -1,0 +1,81 @@
+﻿@using Dashboard.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<Dashboard.Models.Sinhvien>
+@{
+    ViewBag.Title = "Danh sách sinh viên";
+    Layout = "~/Views/Shared/sbAdmin.cshtml";
+}
+<button class="btn btn-default" style="color:#000000;">
+    @Html.ActionLink("Thêm mới", "Create")
+</button>
+<hr />
+<div>
+    <div>
+        @{ var i = 1;} 
+        <table class="table table-striped table-bordered table-style" style="border:1px solid #ddd;">
+            <thead>
+                <tr style="background:#eee;">
+                    <th>STT</th>
+                    <th style="text-align:center;">Mã SV</th>
+                    <th style="text-align:center;">Họ và Tên</th>
+                    <th style="text-align:center;">Địa Chỉ</th>
+                    <th style="text-align:center;">Ngày Sinh</th>
+                    <th style="text-align:center;">Email</th>
+                    <th style="width:100px;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="text-align:center;">
+                            @(i++)
+                        </td>
+                        <td style="text-align:center;">
+                            @item.MASV
+                        </td>
+                        <td style="text-transform: uppercase">
+                            <div class="pull-left" style="width:50px;height:50px;display:table">
+                                <img style="display:table-cell;width:50px;height:50px;border-radius:50%;border:1px solid #ddd;" src="~/Hinhanh/@item.ANHDAIDIEN" alt="" />
+                            </div>
+                            <div class="pull-right" style="width:calc(100% - 77px);height:50px;overflow:hidden;display:table;">
+                                <span style="display:table-cell;height:50px;vertical-align:middle;">
+                                    <a class="fix-title-2-row" title="Xem họ tên giảng viên">
+                                        @item.HOSV @item.TENSV
+                                    </a><br />
+                                </span>
+                            </div>
+                        </td>
+                        <td style="text-align:center;">@item.DIACHI_SV</td>
+                        <td style="text-align:center;">@item.NGAYSINHSV</td>
+                        <td style="text-align:center;">@item.EMAIL</td>
+                        <td style="text-align:center;">
+                            <a href="@Url.Action("Details","Sinhvien", new {id =item.MASV })">
+                                <span class="glyphicon glyphicon-tasks"></span>
+                            </a>
+                            <a href="@Url.Action("Edit","Sinhvien", new {id =item.MASV })">
+                                <span class="fa fa-trash-o"></span>
+                            </a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="9"></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="menu-page">
+            @Html.PagedListPager(Model, page => Url.Action("Danhsachsinhvien", new { page = page }))
+        </div>
+        <style>
+            .menu-page li {
+                display: inline;
+            }
+        </style>
+
+    </div>
+</div>
+

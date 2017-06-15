@@ -1,0 +1,139 @@
+﻿@model Dashboard.Models.Sinhvien
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/sbAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sinhvien</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HOSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOSV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TENSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENSV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANHDAIDIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANHDAIDIEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QUEQUAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUEQUAN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYSINHSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYSINHSV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CMNDSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CMNDSV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIEM_TBTL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIEM_TBTL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDTSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDTSV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDT_PHUHUYNH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT_PHUHUYNH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIACHI_SV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIACHI_SV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIACHI_THUONGTRU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIACHI_THUONGTRU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIOITINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIOITINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRANGTHAISV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRANGTHAISV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chuyennganh.TENCN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chuyennganh.TENCN)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MASV }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
